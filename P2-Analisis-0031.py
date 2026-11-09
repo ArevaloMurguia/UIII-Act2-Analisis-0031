@@ -1,7 +1,7 @@
-# Arevalo Rafael NC:0031 Num.List.:3
 # importar librerias 
 import pandas as pd
 import numpy as np
+# Arevalo Rafael NC:0031 Num.List.:3
 print("Analisis de datos Pacientes Arevalo Rafael NC:0031")
 
 # Ejemplo: 1. Diagnóstico de Salud (Modelos de Clasificación Médica)
@@ -27,3 +27,16 @@ print(Agrupado['Presion_Arterial'].mean())
 print("+-+-+-+- Fumador en cada Paciente +-+-+-+-")
 # Fumador en cada Paciente
 print(Agrupado['Fumador'].max())
+
+print("+-+-+-+-+- Segunda Parte +-+-+-0031+-+-+")
+print("Agregacion multiples")
+print("max --> maximo, min --> minimo ")
+Resultado_Agregado = Agrupado['Fumador'].agg(['mean', 'sum', 'max', 'min'])
+print(Resultado_Agregado)
+print("Agrupación por varias columnas")
+print("Agrega columna DataFrame")
+print("Columna Team --> Equipo ")
+df['Equipo'] = ['A','B','A','B','A','B']
+agrupado_múltiple = df.groupby(['Presion_Arterial', 'Equipo'])['Fumador'].mean()
+print(agrupado_múltiple)
+
